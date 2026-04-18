@@ -161,11 +161,25 @@ body {
   align-items: stretch;
 }
 
-/* TEXTURA DE PAPEL */
+/* TEXTURA DE PAPEL — compatible con todos los navegadores/móviles */
 .page::before {
   content:'';
   position:absolute; inset:0; pointer-events:none; z-index:10;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.52 0 0 0 0 0.42 0 0 0 0 0.3 0 0 0 0.08 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(120,80,40,.018) 2px,
+      rgba(120,80,40,.018) 3px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 3px,
+      rgba(100,65,30,.012) 3px,
+      rgba(100,65,30,.012) 4px
+    );
 }
 
 /* Páginas — altura FIJA */
